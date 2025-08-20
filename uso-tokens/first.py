@@ -15,6 +15,8 @@ payload = {
     'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=2)
 }
 
+print("imprimiendo el payload: ")
+print(payload)
 # Se codifica (firma) el payload con la clave secreta.
 # El algoritmo 'HS256' es el más común para firmas simétricas.
 token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
