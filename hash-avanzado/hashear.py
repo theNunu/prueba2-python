@@ -10,14 +10,12 @@ def hashear_password(password):
     
     return ready_password
 
-def doing_register():
-    nombre = input("ingrese un nombre: ")
-    password = input("Ingrese una contraseña: ")
+def doing_register(password):
 
+    # nombre = input("ingrese un nombre: ")
     password_register_hashed= hashear_password(password)
 
     print(f"""
-    hola {nombre}
     la contraseña original es : {password}
     tu contraseña haheada es: {password_register_hashed}
     """)
@@ -28,6 +26,15 @@ def doing_login():
     password_to_compare = input("recuerdas tu contraseña?: ")
     password_login_hashed = hashear_password(password_to_compare)
     return password_login_hashed
+
+
+def descodificar_contrasena(password):
+    result = doing_register(password)
+    import jwt
+    password_deshaheada = jwt.decode(result,algorithms=["HS256"])
+
+    return password_deshaheada
+
     
 # def comparar_hashes(password_login_hashed, password_register_hashed)-> bool:
 #     #comparar contraseñas de login y register hasheadas
