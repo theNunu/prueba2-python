@@ -1,3 +1,7 @@
 pymongo
 PyJWT
-chromadb
+
+fastapi
+#pip install "fastapi[standard]"
+
+

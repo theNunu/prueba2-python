@@ -4,4 +4,6 @@ venv\Scripts\activate
 
 pip install -r requirements.txt
 
-chromadb
+
+fastapi USANDO_FASTAPI/try-1/main.py 
+
